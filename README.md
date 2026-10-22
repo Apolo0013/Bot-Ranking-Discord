@@ -12,6 +12,24 @@ Bot para Discord desenvolvido com **TypeScript**, **Discord.js** e **PostgreSQL*
 - **Perfil:** consulta das informações dos usuários.
 - **Configuração de XP:** administradores podem definir a quantidade de XP recebida por vitória e derrota.
 
+## Comandos registrados
+
+| Comando | Parâmetros | Descrição |
+|---|---|---|
+| `/start` | Nenhum | Inicia um desafio de adição. |
+| `/ranking` | `limite` (opcional) | Exibe o ranking de XP do servidor, com limite de usuários. |
+| `/perfil` | Nenhum | Exibe o perfil do usuário. |
+| `/config-xp` | `xp-win`, `xp-lose` | Define a quantidade de XP recebida ao ganhar ou perder um desafio. |
+
+### Exemplos de uso
+
+- `/start` — iniciar um desafio.
+- `/ranking limite:10` — exibir os 10 primeiros usuários do ranking.
+- `/perfil` — consultar seu perfil.
+- `/config-xp xp-win:20 xp-lose:5` — configurar 20 XP por vitória e 5 XP por derrota.
+
+**Observação:** o comando `/config-xp` é destinado à configuração dos ganhos de XP e requer permissão de administrador.
+
 ## Tecnologias
 
 - TypeScript
