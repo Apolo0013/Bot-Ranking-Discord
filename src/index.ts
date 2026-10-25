@@ -12,7 +12,7 @@ import './config/config.js'
 //env
 import dotenv from 'dotenv';
 //banco de dados
-
+import './data-base/connection-db.js'
 
 // Carrega as variáveis do arquivo .env
 dotenv.config();

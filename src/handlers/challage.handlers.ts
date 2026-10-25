@@ -28,7 +28,9 @@ export function handlerChatInputChallage(interaction: ChatInputCommandInteractio
     //gerando o desafio para ele
     const result = genereteChallenge(user)
     if (result) {
+        console.log("Deu certo em gerar")
         const challage = UsersInGame[user.id].challenge!
+        console.log(challage)
         const {
             challegeText,
             formula
@@ -62,8 +64,6 @@ export async function handlerButtonChallage(interaction: ButtonInteraction) {
     }
     else {
         const itWin = getIdBtnCorrect(idCustom) == 'btn-correct' // acertou?
-        //atualizando estados e dados
-        await finalChallage({idUser, itWin})
         //UI
         const { components } = UIresponseChallageDisabledBtn(interaction) 
         const embed = UIEmbedFinalQuestion({itWin, idUser})
@@ -72,6 +72,8 @@ export async function handlerButtonChallage(interaction: ButtonInteraction) {
             components: components,
             embeds: [embed]
         })
+        //atualizando estados e dados, funcao de cima utilizar dados um variavel onde esta funcao reserta
+        await finalChallage({idUser, itWin})
     }
     
 }

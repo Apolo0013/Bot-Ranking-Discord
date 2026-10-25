@@ -110,6 +110,8 @@ export function UIEmbedFinalQuestion({itWin, idUser}: ParamUIEmbedFinalQuestion)
         : '❌ Resposta Incorreta!'
     const descricao: string = 'Aqui está o resultado do seu cálculo:'
     //pegando os numero do desafio
+    console.log("CHAMDO NA UI")
+    console.log(UsersInGame[idUser])
     const {x, y} = UsersInGame[idUser].challenge!.numbers
     const resposta = `${x} + ${y} = ${x + y}`
     //pegando os xp definido na configo

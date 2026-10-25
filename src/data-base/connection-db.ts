@@ -12,10 +12,15 @@ export const db = new Pool({
     password: process.env.DB_PASSWORD,
 });
 */
+/*
+//!producao
+export const db = new Pool({
+    connectionString: process.env.DATABASE_URL!
+})
+*/
 
 export const db = new Pool({
     connectionString: process.env.DATABASE_URL!
 })
-
 //criar tabela
 await createTableUserDB()

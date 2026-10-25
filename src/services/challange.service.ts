@@ -46,6 +46,7 @@ export function genereteChallenge(user: User): boolean {
     const [num1, num2] = [randint(1, 20), randint(1, 20)]
     const correctAnswer: number = num1 + num2
     //criando o desafio
+    console.log(UsersInGame[idUser])
     UsersInGame[idUser].challenge = {
         challegeText: `${num1} + ${num2}`,
         formula: "x + y",
@@ -58,6 +59,7 @@ export function genereteChallenge(user: User): boolean {
     }
     //mudando o GameStage/fase do game
     UsersInGame[idUser].gameStage = 'respond'
+    console.log("CHAMADO NA CRICAO DO DESAFIO")
     return true // sucesso em gerar
 }
 
@@ -67,6 +69,7 @@ export function genereteChallenge(user: User): boolean {
 export async function finalChallage({ idUser, itWin }: ParamfinalChallage) {
     //a parti daqui, ja temos certeza que ele ja respondeu.
     //* vamos mudar o gameStage dele para afk
+    console.log("RESETE")
     UsersInGame[idUser].gameStage = 'afk'
     UsersInGame[idUser].challenge = null // retirando o desafio
     //Add os ponto no banco de dados

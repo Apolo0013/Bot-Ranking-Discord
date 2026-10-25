@@ -28,20 +28,20 @@ export function registerInteractionCreateEvent(client: Client) {
             }
             // -/perfil
             if (cmd == 'perfil') {
-                handlerChatInputPerfil(interaction)
+                await handlerChatInputPerfil(interaction)
             }
             // -/ranking [count-users]
             if (cmd == 'ranking') {
-                handlerChatInputRanking(interaction)
+                await handlerChatInputRanking(interaction)
             }
             // -/config-xp [xp-win] [xp-lose]
             if (cmd == 'config-xp') {
-                handlerChatInputConfigXp(interaction)
+                await handlerChatInputConfigXp(interaction)
             }
         }
         ///interacao por button
         if (interaction.isButton()) {
-            handlerButtonChallage(interaction)
+            await handlerButtonChallage(interaction)
         }
     })
 }
