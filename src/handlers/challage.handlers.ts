@@ -28,9 +28,7 @@ export function handlerChatInputChallage(interaction: ChatInputCommandInteractio
     //gerando o desafio para ele
     const result = genereteChallenge(user)
     if (result) {
-        console.log("Deu certo em gerar")
         const challage = UsersInGame[user.id].challenge!
-        console.log(challage)
         const {
             challegeText,
             formula

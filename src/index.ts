@@ -13,7 +13,6 @@ import './config/config.js'
 import dotenv from 'dotenv';
 //banco de dados
 import './data-base/connection-db.js'
-
 // Carrega as variáveis do arquivo .env
 dotenv.config();
 console.log("VARIAVEL AMBIENTES:")
@@ -25,8 +24,6 @@ DB_PASSWORD=${process.env.DB_PASSWORD}
 `)
 //Variavel temp ou variavel que o tempo vida somente no timerun
 export const UsersInGame: Record<string, UserInGame> = {}
-//carregar configuracao
-await readConfig()
 
 // Inicializa o cliente do Discord com os privilégios (Intents) necessários
 export const client = new Client({

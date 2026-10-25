@@ -12,14 +12,14 @@ const DIR_CONFIG_JSON = path.join(__dirname, NAME_JSON)
 //_config comeca com valores default
 export let _config: Config = {
     gains: {
-        lose: 100, 
-        win: 10
+        lose: 10, 
+        win: 100
     },
     adminsIds: []
 }
 //ler o json
-await readConfig()
-
+const read = await readConfig()
+console.log(read ? "CONFIGURADO" : "NAO CONFIGURADO")
 
 /**
  * esta funcao retorna true ou false quando alguem e admin ou nao

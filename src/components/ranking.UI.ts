@@ -36,7 +36,6 @@ export async function UIEmbedRankUsers(users: UserDB[]) {
     const iconTOP1 = userTOP1  //// pegando url do avatar dele
         ? userTOP1.displayAvatarURL({size: 256})
         : null
-    console.log(iconTOP1)
     //criando o embed
     const embed = new EmbedBuilder()
         .setTitle(`TOP ${users.length} do servidor`)
