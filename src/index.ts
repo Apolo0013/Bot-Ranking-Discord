@@ -1,13 +1,18 @@
 
 import { Client, GatewayIntentBits, Events } from 'discord.js';
-import dotenv from 'dotenv';
 //registrar
 import registerEvents from './events/registerEvents.js';
 import registerCommand from './commands/register.command.js';
+//Type
 import { UserInGame } from './services/type.js';
+//config
 import { readConfig } from './config/config.js';
-//carrregarr config global
+//carrregar config global
 import './config/config.js'
+//env
+import dotenv from 'dotenv';
+//banco de dados
+
 
 // Carrega as variáveis do arquivo .env
 dotenv.config();
@@ -18,7 +23,9 @@ CLIENT_ID=${process.env.CLIENT_ID}
 GUILD_ID=${process.env.GUILD_ID}
 DB_PASSWORD=${process.env.DB_PASSWORD}
 `)
-
+//Variavel temp ou variavel que o tempo vida somente no timerun
+export const UsersInGame: Record<string, UserInGame> = {}
+//carregar configuracao
 await readConfig()
 
 // Inicializa o cliente do Discord com os privilégios (Intents) necessários
@@ -30,7 +37,6 @@ export const client = new Client({
     ],
 });
 
-export const UsersInGame: Record<string, UserInGame> = {}
 
 // Evento disparado quando o bot se conecta com sucesso
 client.once(Events.ClientReady, (readyClient) => {

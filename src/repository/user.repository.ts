@@ -11,6 +11,18 @@ import { ParamAddUserDB, UserDB } from "./type.js";
 
 */
 
+
+export async function createTableUserDB() {
+    await db.query(`
+        CREATE TABLE IF NOT EXISTS users (
+            id SERIAL PRIMARY KEY,
+            id_discord VARCHAR(200) UNIQUE NOT NULL,
+            name VARCHAR(100) NOT NULL,
+            xp INT NOT NULL
+        )`
+    )
+}
+
 export async function addUserDB({
     nome,
     id_discord

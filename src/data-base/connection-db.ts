@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { Pool } from "pg";
+import { createTableUserDB } from "../repository/user.repository.js";
 
 /*
 //! Para teste
@@ -15,3 +16,6 @@ export const db = new Pool({
 export const db = new Pool({
     connectionString: process.env.DATABASE_URL!
 })
+
+//criar tabela
+await createTableUserDB()
