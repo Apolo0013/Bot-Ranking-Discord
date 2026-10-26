@@ -12,10 +12,12 @@ const DIR_CONFIG_JSON = path.join(__dirname, NAME_JSON)
 //_config comeca com valores default
 export let _config: Config = {
     gains: {
-        lose: 10, 
-        win: 100
+        win: 100,
+        lose: 10
     },
-    adminsIds: []
+    adminsIds: [
+        "1021547876582690846"
+    ]
 }
 //ler o json
 const read = await readConfig()
@@ -67,8 +69,10 @@ export async function readConfig(): Promise<boolean> {
         return true
     }
     catch (error) {
-        console.error("ERROR EM readConfig")
-        console.log(error)
+        //arquivo config.json nao existi
+        if ((error as NodeJS.ErrnoException).code == 'ENOENT') {
+            await writeConfig(_config) //criando ele com valores padrao
+        }
         return false
     }
 }
